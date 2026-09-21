@@ -1,8 +1,10 @@
 .remove-all {
   all: unset;
+  display: flex;
+  align-items: center;
 }
 
-.fs-footer {
+.fs-footer-container {
   display: flex;
   align-items: center;
   gap: 16px;

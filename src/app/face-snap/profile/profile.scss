@@ -1,0 +1,85 @@
+.fs-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 12px;
+}
+
+.fs-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.fs-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  width: 100%;
+
+  .fs-user-information {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .fs-user-name {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.fs-gray {
+  color: #888;
+  font-size: 12px;
+}
+
+.fs-parameter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  cursor: pointer;
+}
+
+/* Date */
+.date-container {
+  position: relative;
+  display: inline-block;
+}
+
+.date-relative {
+  cursor: help;
+}
+
+.date-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+
+  padding: 8px 12px;
+  border-radius: 6px;
+
+  background: #302226;
+  color: #fff;
+
+  font-size: 12px;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.date-container:hover .date-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}

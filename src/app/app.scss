@@ -2,6 +2,36 @@
   font-family: 'Karla', sans-serif;
 }
 
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .remove-all {
   all: unset;
+}
+
+.page {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+
+}
+
+.sidebar {
+  min-width: 300px;
+  background: gray;
+}
+
+.suggest {
+  min-width: 40%;
+  background: gray;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  padding: 32px 0;
 }

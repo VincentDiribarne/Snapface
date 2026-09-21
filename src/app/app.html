@@ -1,1 +1,15 @@
-<app-face-snap [faceSnap]="mySnap"></app-face-snap>
+<div class="page">
+  <div class="sidebar">
+
+  </div>
+
+  <div class="feed">
+    @for (snap of faceSnaps; track snap.id) {
+      <app-face-snap [faceSnap]="snap"/>
+    }
+  </div>
+
+  <div class="suggest">
+
+  </div>
+</div>

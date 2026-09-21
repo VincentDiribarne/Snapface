@@ -1,10 +1,15 @@
 <div class="fs-card">
-  <h2>{{ faceSnap.title }}</h2>
+  <app-profile [user]="faceSnap.user"
+               [relativeCreatedAt]="faceSnap.relativeDate"
+               [createdAt]="faceSnap.createdAt"
+               [location]="faceSnap.location"
+  />
 
-  <img [ngSrc]="faceSnap.imageURL" [alt]="faceSnap.title" width="334" height="200">
+  <img [ngSrc]="faceSnap.imageURL" alt="Image Face Snap" width="10" height="10">
 
-  <span class="fs-description">{{ faceSnap.description }}</span>
+  <div class="fs-footer">
+    <app-snap-footer [snapModel]="faceSnap.snap"/>
 
-  <app-snap-footer [snapModel]="faceSnap.snap"></app-snap-footer>
+    <span class="fs-description">{{ faceSnap.description }}</span>
+  </div>
 </div>
-
