@@ -1,0 +1,14 @@
+.router-link {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 20px;
+  padding: 8px;
+  text-decoration: none;
+  color: black;
+  width: max-content;
+
+  &.active {
+    font-weight: 500;
+  }
+}

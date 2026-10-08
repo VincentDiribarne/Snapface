@@ -1,8 +1,9 @@
-import {Component, Input, OnDestroy} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {SnapFooter} from './snap-footer/snap-footer';
-import {FaceSnapModel} from '../../models/face-snap';
 import {Profile} from './profile/profile';
+import {FaceSnapModel} from '../../models/face-snap';
+import {SnapType} from '../../models/snap-type.type';
 
 @Component({
   imports: [
@@ -17,6 +18,7 @@ import {Profile} from './profile/profile';
 
 export class FaceSnap implements OnDestroy {
   @Input() faceSnap!: FaceSnapModel;
+  @Output() snapChanged = new EventEmitter<SnapType>();
 
   private interval?: ReturnType<typeof setInterval>;
 

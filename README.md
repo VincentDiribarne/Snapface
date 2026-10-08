@@ -42,12 +42,10 @@ L'application est organisée autour de composants Angular afin de séparer les d
 ```text
 src/
 ├── app/
-│   ├── components/
-│   ├── pages/
-│   ├── services/
-│   ├── models/
-│   └── ...
-├── assets/
+│   └── components/
+├── models/
+├── index.html
+├── main.ts
 └── styles.scss
 ```
 

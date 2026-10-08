@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {SnapModel} from '../../../models/face-snap';
+import {SnapType} from '../../../models/snap-type.type';
 
 @Component({
   imports: [],
@@ -8,8 +9,9 @@ import {SnapModel} from '../../../models/face-snap';
   templateUrl: './snap-footer.html',
 })
 
-export class SnapFooter{
+export class SnapFooter {
   @Input() snapModel!: SnapModel
+  @Output() snapChanged = new EventEmitter<SnapType>()
 
   protected userHasClicked: boolean = false;
 
@@ -18,12 +20,12 @@ export class SnapFooter{
   }
 
   unSnap(): void {
-    this.snapModel.removeSnap()
     this.userHasClicked = false;
+    this.snapChanged.emit('unsnap')
   }
 
   snap(): void {
-    this.snapModel.addSnap()
     this.userHasClicked = true;
+    this.snapChanged.emit('snap')
   }
 }

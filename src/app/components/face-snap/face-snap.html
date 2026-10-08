@@ -8,7 +8,7 @@
   <img [ngSrc]="faceSnap.imageURL" alt="Image Face Snap" width="10" height="10">
 
   <div class="fs-footer">
-    <app-snap-footer [snapModel]="faceSnap.snap"/>
+    <app-snap-footer [snapModel]="faceSnap.snapModel" (snapChanged)="snapChanged.emit($event)"/>
 
     <span class="fs-description">{{ faceSnap.description }}</span>
   </div>

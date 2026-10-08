@@ -1,0 +1,5 @@
+<a class="router-link" [routerLink]="link.routerLink" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" #rla="routerLinkActive">
+  <img [ngSrc]="'sidebar/' + (rla.isActive ? link.icon + '-fill' : link.icon) + '.svg'" alt="Icon" width="32" height="32"/>
+
+  <span>{{ link.label }}</span>
+</a>

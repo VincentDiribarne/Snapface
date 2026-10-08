@@ -1,0 +1,23 @@
+<nav class="sidebar-container">
+  <a class="icon" routerLink="home">
+    <img class="round" ngSrc="logo.svg" [alt]="me.name" width="32" height="32"/>
+
+    <span>Snapface</span>
+  </a>
+
+  <div class="links-container links-height">
+    @for (link of links; track link.label) {
+      <app-link [link]="link"/>
+    }
+  </div>
+
+  <div class="links-container">
+    <app-link [link]="{label: 'Paramètres', routerLink: 'plus', icon: 'gear'}"/>
+
+    <a class="icon router-link" routerLink="profile" routerLinkActive="active">
+      <img class="round" [ngSrc]="me.imageURL" [alt]="me.name" width="32" height="32"/>
+
+      <span>{{ me.name }}</span>
+    </a>
+  </div>
+</nav>

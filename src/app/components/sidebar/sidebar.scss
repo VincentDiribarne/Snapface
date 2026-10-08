@@ -1,0 +1,41 @@
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  height: calc(100dvh - 48px);
+  padding: 24px;
+  width: 48px;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.links-height {
+  height: 40%;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+}
+
+.router-link {
+  width: max-content;
+
+  &.active {
+    font-weight: 500;
+  }
+}
+
+.round {
+  border-radius: 50%;
+}

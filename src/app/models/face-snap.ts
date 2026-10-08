@@ -1,12 +1,25 @@
+import {SnapType} from './snap-type.type';
+
 export class FaceSnapModel {
+  id: string
   relativeDate!: string
   location?: string
 
-  constructor(public id: number, public user: UserSnapModel, public description: string, public imageURL: string, public createdAt: Date, public snap: SnapModel) {
+  constructor(public user: UserSnapModel, public description: string, public imageURL: string, public createdAt: Date, public snapModel: SnapModel) {
+    this.id = crypto.randomUUID().substring(0, 8);
   }
 
   setLocation(location: string) {
     this.location = location;
+  }
+
+  withLocation(location: string): FaceSnapModel {
+    this.setLocation(location);
+    return this;
+  }
+
+  snap(type: SnapType) {
+    this.snapModel.snap(type)
   }
 
   updateRelativeDate() {
@@ -31,6 +44,10 @@ export class SnapModel {
   constructor(public snaps: number, public comments: number, public sends: number) {
   }
 
+  snap(type: SnapType) {
+    type === 'snap' ? this.addSnap() : this.removeSnap();
+  }
+
   addSnap(): void {
     this.snaps++
   }
@@ -38,8 +55,6 @@ export class SnapModel {
   removeSnap(): void {
     this.snaps--;
   }
-
-
 }
 
 export class UserSnapModel {

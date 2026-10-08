@@ -1,0 +1,15 @@
+.page {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.feed {
+  padding-left: 48px;
+  width: 40%;
+}
+
+.suggest {
+  width: 25%;
+}
