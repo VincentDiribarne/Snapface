@@ -4,14 +4,20 @@
   justify-content: space-between;
   position: fixed;
   height: calc(100dvh - 48px);
-  padding: 24px;
+  padding: 24px 0 24px 24px;
   width: 48px;
+  overflow: hidden;
+  transition: width 0.05s ease-in-out;
+
+  &:hover {
+    width: 220px;
+  }
 }
 
 .links-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .links-height {
@@ -21,7 +27,7 @@
 .icon {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   font-size: 20px;
   padding: 8px;
   color: black;
