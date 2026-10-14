@@ -1,12 +1,11 @@
 import {SnapType} from './snap-type.type';
-import {UserModel} from '../../profil/models/user';
 
 export class FaceSnapModel {
   id: string
   relativeDate!: string
   location?: string
 
-  constructor(public user: UserModel, public description: string, public imageURL: string, public createdAt: Date, public snapModel: SnapModel) {
+  constructor(public description: string, public imageURL: string, public createdAt: Date, public snapModel: SnapModel) {
     this.id = crypto.randomUUID().substring(0, 8);
   }
 

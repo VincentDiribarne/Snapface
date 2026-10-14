@@ -17,6 +17,6 @@ export class Suggest implements OnInit {
   private userService = inject(UsersService)
 
   ngOnInit() {
-    this.suggestions = this.userService.getUserWithoutMe();
+    this.suggestions = this.userService.getOtherUsers();
   }
 }

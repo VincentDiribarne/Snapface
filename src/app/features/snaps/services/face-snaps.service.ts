@@ -1,16 +1,14 @@
 import {Injectable} from '@angular/core';
 import {FaceSnapModel, SnapModel} from '../models/face-snap';
 import {SnapType} from '../models/snap-type.type';
-import {UsersService} from '../../profil/services/users.service';
 
 @Injectable({providedIn: 'root'})
 export class FaceSnapsService {
   private readonly faceSnaps: FaceSnapModel[]
 
-  constructor(userService: UsersService) {
+  constructor() {
     this.faceSnaps = [
       new FaceSnapModel(
-        userService.randomForFeed(),
         'J’ai eu le plaisir de découvrir le musée du Louvre et ses trésors artistiques. 🖼️ Entre œuvres emblématiques, histoire et architecture exceptionnelle, une visite riche en découvertes et en émerveillement ! ✨\n' +
         '\n' +
         '#Louvre #Art #Culture #Paris #Museum',
@@ -19,7 +17,6 @@ export class FaceSnapsService {
         new SnapModel(14, 3, 0)
       ).withLocation('Musée du Louvre, Paris'),
       new FaceSnapModel(
-        userService.randomForFeed(),
         'Mon meilleur ami',
         'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
         new Date(),

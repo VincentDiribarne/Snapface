@@ -1,36 +1,40 @@
-import {Injectable} from '@angular/core';
+import {computed, inject, Injectable, signal} from '@angular/core';
 import {UserModel} from '../models/user';
+import {HttpClient} from '@angular/common/http';
+import {map, Observable, tap} from 'rxjs';
+import {UserProps} from '@/features/profil/models/user.type';
 
 @Injectable({providedIn: 'root'})
 export class UsersService {
-  private MV: UserModel = new UserModel('MisterVinvin', 'https://cdn.discordapp.com/avatars/356474760655536139/a_ccde2d38c3f6df23b2312da5f258eeb9.webp?size=40')
-  private CG: UserModel = new UserModel('Cyrielle', 'https://cdn.discordapp.com/avatars/686941282236497940/a5fd7322157a05c5e45370c51a0a041e.webp?size=40')
-  private PC: UserModel = new UserModel('Plot de chantier 🏗️', 'https://cdn.discordapp.com/avatars/397774443860066304/d847769d901fe2a99cf9f466e2750138.webp?size=40')
-  private B: UserModel = new UserModel('Bibliothèque', 'https://cdn.discordapp.com/avatars/227455657870229504/e06e26301cdda00d616a40c2e7ab2fb9.webp?size=40')
-  private Y: UserModel = new UserModel('Ydno', 'https://cdn.discordapp.com/avatars/740422727642513448/bf59c4ff4ce8de203bbd30bb7ef58c40.webp?size=40')
-  private BDL: UserModel = new UserModel('Beau de l\'aire', 'https://cdn.discordapp.com/avatars/360034833876910082/4fd2c90db9d9685c83be30ca47f59cf7.webp?size=40')
+  users = signal<UserModel[]>([]);
+  me = computed(() => this.getUserById('mistervinvin'));
 
-  me(): UserModel {
-    return this.getUserById(0);
+  private http = inject(HttpClient)
+
+  loadUsers(): Observable<UserModel[]> {
+    return this.http
+      .get<UserProps[]>('data/users.json')
+      .pipe(
+        map(list => list.map(props => new UserModel(props))),
+        tap(users => this.users.set(users))
+      );
   }
 
-  getUserList(): UserModel[] {
-    return [this.MV, this.CG, this.PC, this.B, this.Y, this.BDL];
+  getUsers() {
+    return this.users();
   }
 
-  getUserWithoutMe(): UserModel[] {
-    return this.getUserList().filter(user => user !== this.me());
+  getOtherUsers(): UserModel[] {
+    return this.getUsers().filter(user => user.id !== this.me()?.id);
   }
 
-  getUserById(index: number): UserModel {
-    return this.getUserList()[index];
-  }
+  getUserById(id: string): UserModel {
+    const user = this.users().find(user => user.id === id);
 
-  random(): UserModel {
-    return this.getUserWithoutMe()[Math.floor(Math.random() * this.getUserWithoutMe().length)];
-  }
+    if (!user) {
+      throw new Error('User not found');
+    }
 
-  randomForFeed(): UserModel {
-    return this.getUserWithoutMe()[Math.floor(Math.random() * 2)];
+    return user;
   }
 }

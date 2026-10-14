@@ -1,5 +1,6 @@
 import {Routes} from '@angular/router';
-import {SnapsHome} from './features/snaps/pages/snaps-home/snaps-home';
+import {SnapsHome} from '@/features/snaps/pages/snaps-home/snaps-home';
+import {ProfilePage} from '@/features/profil/pages/profile/profile-page';
 
 export const routes: Routes = [
   {
@@ -13,5 +14,9 @@ export const routes: Routes = [
   {
     path: 'search',
     component: SnapsHome
+  },
+  {
+    path: 'profile/:id',
+    component: ProfilePage
   }
 ];
