@@ -1,0 +1,37 @@
+.s-profile-container {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+
+  img {
+    border-radius: 50%;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    cursor: pointer;
+
+    .s-username {
+      font-weight: 500;
+      font-size: 14px;
+      color: black;
+    }
+
+    .s-suggest {
+      color: gray;
+      font-size: 12px;
+    }
+  }
+
+  button {
+    color: blue;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+}

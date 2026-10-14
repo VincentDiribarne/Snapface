@@ -1,0 +1,5 @@
+<div class="suggest">
+  @for (user of suggestions; track user.name; let i = $index) {
+    <suggest-profile [user]="user" [alreadyFollowed]="i < 2"/>
+  }
+</div>

@@ -1,0 +1,19 @@
+<div class="s-profile-container">
+  <img [ngSrc]="user.imageURL" width="40" height="40" [alt]="user.name">
+
+  <div class="text-container">
+    <span class="s-username">{{ user.name }}</span>
+
+    @if (!alreadyFollowed) {
+      <span class="s-suggest">Suggestion</span>
+    } @else {
+      <span class="s-suggest">Consulter le profil</span>
+    }
+  </div>
+
+  @if (!alreadyFollowed) {
+    <button class="remove-all">
+      Suivre
+    </button>
+  }
+</div>
