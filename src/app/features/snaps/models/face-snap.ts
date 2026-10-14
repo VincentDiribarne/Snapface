@@ -1,12 +1,23 @@
-import {SnapType} from './snap-type.type';
+import {FaceSnapProps, SnapType} from './snap.type';
 
 export class FaceSnapModel {
   id: string
   relativeDate!: string
   location?: string
+  description: string
+  imageURL: string
+  createdAt: Date
+  snapModel: SnapModel
+  userId: string
 
-  constructor(public description: string, public imageURL: string, public createdAt: Date, public snapModel: SnapModel) {
+  constructor(props: FaceSnapProps, userId: string) {
     this.id = crypto.randomUUID().substring(0, 8);
+    this.description = props.description;
+    this.imageURL = props.imageURL;
+    this.location = props.location;
+    this.createdAt = new Date(props.createdAt)
+    this.snapModel = new SnapModel(props.snaps, props.comments, props.sends);
+    this.userId = userId
   }
 
   setLocation(location: string) {

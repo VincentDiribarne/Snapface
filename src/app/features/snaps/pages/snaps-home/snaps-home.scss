@@ -1,13 +1,7 @@
-.page {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  width: 100%;
-}
-
 .feed {
   padding-left: 48px;
   width: 40%;
+  max-width: 450px;
 }
 
 .suggest {

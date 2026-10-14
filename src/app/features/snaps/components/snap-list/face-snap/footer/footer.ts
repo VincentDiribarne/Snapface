@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {SnapModel} from '../../../../models/face-snap';
-import {SnapType} from '../../../../models/snap-type.type';
+import {SnapType} from '../../../../models/snap.type';
 
 
 @Component({

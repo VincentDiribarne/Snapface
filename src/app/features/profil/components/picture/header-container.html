@@ -1,0 +1,9 @@
+<div class="header-container">
+  <img [ngSrc]="user.imageURL" [alt]="user.name" width="160" height="160"/>
+
+  <div class="header-text">
+    <profile-header [user]="user"/>
+
+    <profile-description [description]="user.description"/>
+  </div>
+</div>

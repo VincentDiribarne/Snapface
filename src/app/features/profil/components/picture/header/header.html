@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="information">
+    <h3>{{ user.name }}</h3>
+
+    <span class="small">{{ "@" + user.id }}</span>
+  </div>
+
+  <div class="follows-container">
+    <div class="follows">
+      <span class="bold">{{ user.followers.length }}</span>
+
+      <span>followers</span>
+    </div>
+
+    <div class="follows">
+      <span class="bold">{{ user.following.length }}</span>
+
+      <span>suivis</span>
+    </div>
+  </div>
+</div>

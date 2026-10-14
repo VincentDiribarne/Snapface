@@ -5,20 +5,22 @@ export class UserModel {
   id: string
   name: string
   imageURL: string
+  description: string
   followers: string[]
   following: string[]
   snaps: FaceSnapModel[]
 
-  constructor({ name, imageURL, followers = [], following = [], snaps = [] }: UserProps) {
+  constructor({ name, imageURL, description, followers = [], following = [], snaps = [] }: UserProps) {
     this.id = this.toId(name)
     this.name = name
     this.imageURL = imageURL
+    this.description = description ?? ''
     this.followers = followers
     this.following = following
-    this.snaps = snaps
+    this.snaps = snaps.map(snap => new FaceSnapModel(snap, this.id))
   }
 
-  toId(name: string): string {
+  private toId(name: string): string {
     return name
       .normalize('NFD')
       .toLowerCase()
