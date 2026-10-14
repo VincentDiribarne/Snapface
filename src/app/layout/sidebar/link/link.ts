@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {RouterLink, RouterLinkActive} from '@angular/router';
-import {LinkModel} from '../../../models/link-model';
+import {LinkModel} from '@/models/link-model';
 import {NgOptimizedImage} from '@angular/common';
 
 @Component({

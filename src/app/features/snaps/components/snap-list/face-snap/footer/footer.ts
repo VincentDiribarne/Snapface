@@ -1,15 +1,16 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {SnapModel} from '../../../models/face-snap';
-import {SnapType} from '../../../models/snap-type.type';
+import {SnapModel} from '../../../../models/face-snap';
+import {SnapType} from '../../../../models/snap-type.type';
+
 
 @Component({
   imports: [],
-  selector: 'app-snap-footer',
-  styleUrl: './snap-footer.scss',
-  templateUrl: './snap-footer.html',
+  selector: 'snap-footer',
+  styleUrl: './footer.scss',
+  templateUrl: './footer.html',
 })
 
-export class SnapFooter {
+export class Footer {
   @Input() snapModel!: SnapModel
   @Output() snapChanged = new EventEmitter<SnapType>()
 

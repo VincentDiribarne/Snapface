@@ -1,17 +1,17 @@
 import {Component, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
-import {SnapFooter} from './snap-footer/snap-footer';
+import {Footer} from './footer/footer';
 import {Profile} from './profile/profile';
-import {FaceSnapModel} from '../../models/face-snap';
-import {SnapType} from '../../models/snap-type.type';
+import {FaceSnapModel} from '../../../models/face-snap';
+import {SnapType} from '../../../models/snap-type.type';
 
 @Component({
   imports: [
     NgOptimizedImage,
     Profile,
-    SnapFooter
+    Footer
   ],
-  selector: 'app-face-snap',
+  selector: 'face-snap',
   styleUrl: './face-snap.scss',
   templateUrl: './face-snap.html',
 })

@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {LinkModel} from '../../models/link-model';
+import {LinkModel} from '@/models/link-model';
 import {Link} from './link/link';
 import {NgOptimizedImage} from '@angular/common';
 import {RouterLink, RouterLinkActive} from '@angular/router';
-import {UsersService} from '../../services/users.service';
-import {UserSnapModel} from '../../models/face-snap';
+import {UserModel} from '@/features/profil/models/user';
+import {UsersService} from '@/features/profil/services/users.service';
 
 @Component({
   imports: [
@@ -20,7 +20,7 @@ import {UserSnapModel} from '../../models/face-snap';
 
 export class Sidebar implements OnInit {
   protected links!: LinkModel[]
-  protected me!: UserSnapModel
+  protected me!: UserModel
 
   constructor(userService: UsersService) {
     this.me = userService.me();

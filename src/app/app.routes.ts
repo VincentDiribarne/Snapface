@@ -1,17 +1,17 @@
 import {Routes} from '@angular/router';
-import {Home} from './pages/home/home';
+import {SnapsHome} from './features/snaps/pages/snaps-home/snaps-home';
 
 export const routes: Routes = [
   {
     path: '',
-    component: Home
+    component: SnapsHome
   },
   {
     path: 'messages',
-    component: Home
+    component: SnapsHome
   },
   {
     path: 'search',
-    component: Home
+    component: SnapsHome
   }
 ];

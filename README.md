@@ -26,30 +26,54 @@ Ce projet m'a permis de mettre en pratique plusieurs concepts fondamentaux d'Ang
 - Fil d'actualité
 - Publications
 - Likes
+- Messagerie
 - Profil utilisateur
 - Navigation entre les différentes pages
 
 ## 🛠️ Technologies
 
 <p>
-  <img alt="logo" src="https://skillicons.dev/icons?i=angular,typescript,html,scss,git" />
+  <img alt="Angular, TS, HTML, SCSS, Git" src="https://skillicons.dev/icons?i=angular,typescript,html,scss,git" />
 </p>
 
 ## 🏗️ Architecture
 
-L'application est organisée autour de composants Angular afin de séparer les différentes parties de l'interface.
+### Architecture initiale
+
+L'application était initialement organisée autour de dossiers regroupant les composants, modèles, services et pages. Cette structure permettait de séparer les responsabilités tout en conservant une organisation simple.
 
 ```text
 src/
 ├── app/
-│   └── components/
-├── models/
+│   ├── components/
+│   ├── models/
+│   ├── pages/
+│   └── services/
 ├── index.html
 ├── main.ts
 └── styles.scss
 ```
 
-Cette organisation permet notamment de faciliter la réutilisation des composants et de maintenir une séparation claire entre les différentes responsabilités de l'application.
+### Évolution vers une architecture par fonctionnalités
+
+Au fil du développement, l'organisation a évolué vers une architecture orientée fonctionnalités (*feature-based*). L'objectif était de regrouper les éléments liés à un même domaine fonctionnel afin de faciliter la maintenance et l'évolution de l'application.
+
+```text
+src/app/
+├── features/
+│   ├── snaps/
+│   │   ├── components/
+│   │   ├── models/
+│   │   ├── services/
+│   │   └── pages/
+│   ├── messages/
+│   ├── profil/
+│   └── search/
+└── layout/
+    └── sidebar/
+```
+
+Cette évolution permet de mieux isoler les fonctionnalités et de regrouper leurs composants, modèles et services respectifs. Les éléments transverses, comme la barre latérale, restent dans un dossier dédié au layout.
 
 ---
 
@@ -73,10 +97,10 @@ ng serve
 L'application est ensuite accessible à l'adresse `http://localhost:4200`.
 
 ## Aperçu
-### Fil d'actualité
-<!-- Ajouter une capture d'écran -->
+### Accueil
+![img.png](img.png)
 
-### Profil
+### Messages
 <!-- Ajouter une capture d'écran -->
 
 ### Autres interfaces
@@ -90,12 +114,12 @@ Le projet pourrait être complété par un backend afin de rendre l'application 
 - Persistance des publications, likes et commentaires
 - Gestion de l'ajout d'images
 - Système de notifications
-- Messagerie privée
+- Messagerie privée fonctionnelle
 
 ## 👨‍💻 Auteur
 Vincent DIRIBARNE
 
-Projet réalisé dans le cadre de la certification Angular — **Octobre 2026**.
+Projet réalisé dans le cadre de la certification Angular sans IA — **Octobre 2026**.
 
 ## 📄 Licence
 Ce projet est un projet personnel réalisé à des fins d'apprentissage et de démonstration.

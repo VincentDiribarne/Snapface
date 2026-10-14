@@ -1,0 +1,5 @@
+<div class="feed">
+  @for (snap of faceSnaps; track snap.id) {
+    <face-snap [faceSnap]="snap" (snapChanged)="onSnapChanged(snap.id, $event)"/>
+  }
+</div>

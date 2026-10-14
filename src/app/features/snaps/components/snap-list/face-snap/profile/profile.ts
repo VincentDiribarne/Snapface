@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {UserSnapModel} from '../../../models/face-snap';
 import {DatePipe, LowerCasePipe, NgOptimizedImage} from '@angular/common';
+import {UserModel} from '@/features/profil/models/user';
 
 @Component({
   imports: [
@@ -8,13 +8,13 @@ import {DatePipe, LowerCasePipe, NgOptimizedImage} from '@angular/common';
     LowerCasePipe,
     DatePipe
   ],
-  selector: 'app-profile',
+  selector: 'snap-profile',
   styleUrl: './profile.scss',
   templateUrl: './profile.html',
 })
 
 export class Profile {
-  @Input() user!: UserSnapModel
+  @Input() user!: UserModel
   @Input() createdAt!: Date
   @Input() relativeCreatedAt!: string
   @Input() location?: string
