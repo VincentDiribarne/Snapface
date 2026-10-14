@@ -15,6 +15,12 @@
     width: 100%;
     cursor: pointer;
 
+    &:hover {
+      .s-username {
+        text-decoration: underline;
+      }
+    }
+
     .s-username {
       font-weight: 500;
       font-size: 14px;

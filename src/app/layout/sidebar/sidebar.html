@@ -14,7 +14,7 @@
   <div class="links-container">
     <app-link [link]="{label: 'Paramètres', routerLink: 'plus', icon: 'gear'}"/>
 
-    <a class="icon router-link" routerLink="profile" routerLinkActive="active">
+    <a class="icon router-link" (click)="goToProfile()">
       <img class="round" [ngSrc]="me.imageURL" [alt]="me.name" width="32" height="32"/>
 
       <span>{{ me.name }}</span>
