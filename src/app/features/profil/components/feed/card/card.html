@@ -1,0 +1,19 @@
+<div class="card" (mouseenter)="hovered.set(true)" (mouseleave)="hovered.set(false)">
+  <img [ngSrc]="snap.imageURL" referrerpolicy="no-referrer" alt="Image Face Snap" width="10" height="10">
+
+  @if (hovered()) {
+    <div class="snaps">
+      <div class="information">
+        <img ngSrc="svg/heart.svg" alt="Snap" width="16" height="16"/>
+
+        {{ snap.snapModel.snaps }}
+      </div>
+
+      <div class="information">
+        <img ngSrc="svg/comment.svg" alt="Commentaire" width="16" height="16"/>
+
+        {{ snap.snapModel.comments }}
+      </div>
+    </div>
+  }
+</div>

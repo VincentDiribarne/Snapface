@@ -1,0 +1,33 @@
+.card {
+  position: relative;
+  width: 100%;
+  border: solid 1px white;
+
+  .snaps {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+
+    .information {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    cursor: pointer;
+  }
+}

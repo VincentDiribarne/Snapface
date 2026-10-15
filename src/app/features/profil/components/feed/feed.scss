@@ -1,0 +1,6 @@
+.feed-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(200px, 33.333%), 1fr));
+  border-radius: 8px;
+  overflow: hidden;
+}

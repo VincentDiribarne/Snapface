@@ -1,1 +1,5 @@
-<p>feed works!</p>
+<div class="feed-container">
+  @for (snap of snaps; track snap.id) {
+    <profile-card [snap]="snap"/>
+  }
+</div>
